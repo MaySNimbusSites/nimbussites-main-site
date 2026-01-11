@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thanks — We're Reviewing Your Request | Nimbus Sites</title>
+  <meta name="description" content="Thanks for your lifetime plan request. We'll be in touch shortly." />
+
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <style>
+    :root{
+      --brand:#0B1F3B;
+      --accent:#2563EB;
+      --bg:#F9FAFB;
+      --text:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+      --border:rgba(15,23,42,.12);
+      --shadow:0 14px 30px rgba(2,6,23,.08);
+    }
+    body{
+      margin:0;background:var(--bg);color:var(--text);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial
+    }
+    .container{max-width:820px;margin:0 auto;padding:0 18px}
+    main{padding:72px 0}
+    h1{color:var(--brand);letter-spacing:-.4px}
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:36px;
+    }
+    .lead{color:var(--muted);font-size:16px;line-height:1.6}
+    .steps{margin:28px 0;display:grid;gap:16px}
+    .step{
+      display:flex;gap:14px;align-items:flex-start;
+      background:rgba(11,31,59,.03);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+    }
+    .num{
+      width:30px;height:30px;border-radius:999px;
+      background:var(--accent);color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:14px;
+      flex-shrink:0;
+    }
+    .cta{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:14px 22px;border-radius:999px;
+      background:var(--accent);color:#fff;
+      font-weight:800;text-decoration:none;
+      box-shadow:0 12px 28px rgba(37,99,235,.28);
+    }
+    .cta.secondary{
+      background:#fff;color:var(--brand);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+    .small{font-size:13px;color:var(--muted)}
+    .hidden{display:none}
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1>Thanks — we've received your request</h1>
+        <p class="lead">
+          We're reviewing your lifetime plan request now.
+          You'll hear back by email shortly with next steps.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <strong>We review your request</strong><br />
+              We check fit based on business type, change frequency, and goals.
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <strong>You receive a decision by email</strong><br />
+              If approved, we'll include a secure payment link.
+              If not, we'll recommend the best alternative plan.
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <strong>Your site gets scheduled</strong><br />
+              Once payment is completed, we begin building your website.
+            </div>
+          </div>
+        </div>
+
+        <!-- OPTIONAL CALL CTA -->
+        <div id="callSection" class="hidden">
+          <hr style="border:none;border-top:1px solid var(--border);margin:28px 0" />
+          <h2 style="margin-top:0;color:var(--brand)">Want to talk it through?</h2>
+          <p class="lead">
+            You can book a short, optional 15-minute call to ask questions
+            before making a decision.
+          </p>
+          <div class="actions">
+            <a class="cta" href="https://calendly.com/YOUR-CALENDLY-LINK" target="_blank" rel="noopener">
+              Book a 15-minute call
+            </a>
+            <span class="small">No pressure · No obligation</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="cta secondary" href="/">Back to homepage</a>
+        </div>
+
+        <p class="small" style="margin-top:24px">
+          Questions? Email us at <strong>support@nimbussites.com</strong>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Show call CTA only if user selected "Yes" in the form
+    const params = new URLSearchParams(window.location.search);
+    const callPref = (params.get('call') || '').toLowerCase();
+
+    if (callPref.includes('yes')) {
+      document.getElementById('callSection').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

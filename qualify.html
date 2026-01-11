@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lifetime Plan Qualification | Nimbus Sites</title>
+  <meta name="description" content="Quick lifetime plan qualification for Nimbus Sites. Takes under 2 minutes." />
+
+  <link rel="stylesheet" href="/assets/styles.css"/>
+  <link rel="stylesheet" href="/assets/header.css"/>
+
+  <style>
+    /* Fallback styling if your global CSS doesn't load (keeps brand consistent) */
+    :root{
+      --brand:#0B1F3B;     /* Midnight Blue */
+      --accent:#2563EB;    /* Electric Blue */
+      --bg:#F9FAFB;        /* Cloud White */
+      --text:#0f172a;
+      --muted:#64748b;
+      --card:#ffffff;
+      --border:rgba(15,23,42,.12);
+      --shadow:0 14px 30px rgba(2,6,23,.08);
+      --radius:18px;
+      --radius2:24px;
+    }
+    body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+    a{color:inherit}
+    .container{max-width:1040px;margin:0 auto;padding:0 18px}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(249,250,251,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logoMark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:0 10px 20px rgba(37,99,235,.18)}
+    .brandText{display:flex;flex-direction:column;line-height:1}
+    .brandText strong{font-weight:800;color:var(--brand);letter-spacing:.2px}
+    .brandText span{font-size:12px;color:var(--muted);margin-top:3px}
+    .navLinks{display:flex;gap:16px;align-items:center}
+    .navLinks a{font-size:14px;color:var(--muted);text-decoration:none}
+    .navLinks a:hover{color:var(--brand)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);padding:10px 14px;border-radius:999px;background:#fff;color:var(--brand);text-decoration:none;font-weight:700}
+    .btn.primary{background:var(--accent);border-color:transparent;color:#fff;box-shadow:0 12px 28px rgba(37,99,235,.25)}
+    .btn.primary:hover{filter:brightness(.98)}
+    .btn.ghost{background:transparent}
+    .hero{padding:44px 0 22px}
+    .heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+    @media (max-width:900px){.heroGrid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius2);box-shadow:var(--shadow)}
+    .heroCard{padding:22px}
+    h1{margin:0 0 10px;font-size:34px;line-height:1.1;color:var(--brand);letter-spacing:-.6px}
+    .lead{margin:0 0 14px;color:var(--muted);font-size:16px;line-height:1.5}
+    .pillRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(11,31,59,.03);font-size:13px;color:var(--brand);font-weight:700}
+    .formWrap{padding:22px}
+    .formGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:720px){.formGrid{grid-template-columns:1fr}}
+    label{display:block;font-size:13px;color:var(--brand);font-weight:800;margin:0 0 6px}
+    .hint{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4}
+    input,select,textarea{
+      width:100%;box-sizing:border-box;
+      padding:12px 12px;border-radius:14px;border:1px solid var(--border);
+      background:#fff;font-size:14px;outline:none;
+    }
+    textarea{min-height:96px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:rgba(37,99,235,.55);box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+    .rowFull{grid-column:1 / -1}
+    .note{
+      border-left:4px solid rgba(37,99,235,.5);
+      background:rgba(37,99,235,.06);
+      padding:12px 12px;border-radius:14px;color:var(--brand);
+      font-size:13px;line-height:1.45
+    }
+    .warn{
+      border-left:4px solid rgba(239,68,68,.6);
+      background:rgba(239,68,68,.08);
+      color:#7f1d1d;
+    }
+    .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+    .small{font-size:12px;color:var(--muted)}
+    .footer{padding:28px 0 44px;color:var(--muted);font-size:13px}
+    .footer a{color:var(--muted);text-decoration:none}
+    .footer a:hover{color:var(--brand)}
+    .fade{opacity:0;transform:translateY(10px);transition:opacity .45s ease, transform .45s ease}
+    .fade.in{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+
+<body>
+    <header>
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Nimbus Sites home">
+          <img src="/assets/images/logo.png" alt="Nimbus Sites logo">
+          <!-- <span class="logo-dot" aria-hidden="true"></span> -->
+          <span><span style="color: black;">Nimbus</span> Sites</span>
+        </a>
+    
+        <nav id="nav">
+          <a href="/">Home</a>
+          <a href="/about.html">About</a>
+          <a href="/pricing.html" class="active">Pricing</a>
+          <a href="/contact.html">Contact</a>
+          <a href="https://tally.so/r/2EakoA" class="btn-primary">Get Your Free Site</a>
+        </nav>
+    
+        <button class="hamburger" id="hamburger">☰</button>
+      </div>
+    </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container heroGrid">
+        <div class="card heroCard fade">
+          <h1>Lifetime Plan Qualification</h1>
+          <p class="lead">
+            Lifetime plans aren't for everyone — and that's intentional.
+            This quick form helps us confirm if a lifetime plan is a good fit so we can keep quality and long-term support high.
+          </p>
+          <div class="pillRow">
+            <div class="pill">⏱️ Takes under 2 minutes</div>
+            <div class="pill">✅ No pressure</div>
+            <div class="pill">🔒 Reviewed by a human</div>
+          </div>
+        </div>
+
+        <div class="card heroCard fade">
+          <h2 style="margin:0 0 10px;font-size:16px;color:var(--brand);letter-spacing:-.2px;">Before you continue</h2>
+          <p class="lead" style="margin:0;font-size:14px;">
+            Nimbus Sites currently builds websites for <strong>service-based businesses</strong>.
+            We do <strong>not</strong> build ecommerce/online store websites at this time.
+          </p>
+          <div class="hint" style="margin-top:10px;">
+            If you're unsure, submit the form — we'll recommend the best plan for your business.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section>
+      <div class="container">
+        <div class="card formWrap fade">
+          <!-- Netlify Forms ready (no API needed) -->
+          <form name="lifetime-qualification" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/qualify-thank-you.html?call={{call_preference}}" id="qualifyForm">
+            <input type="hidden" name="form-name" value="lifetime-qualification" />
+            <p style="display:none;">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <!-- Hidden tracking fields (populate via URL params) -->
+            <input type="hidden" name="utm_source" id="utm_source" />
+            <input type="hidden" name="utm_medium" id="utm_medium" />
+            <input type="hidden" name="utm_campaign" id="utm_campaign" />
+            <input type="hidden" name="utm_content" id="utm_content" />
+            <input type="hidden" name="variant" id="variant" />
+            <input type="hidden" name="landing_page" id="landing_page" />
+
+            <div class="formGrid">
+              <div>
+                <label for="fullName">Full name</label>
+                <input id="fullName" name="full_name" type="text" autocomplete="name" required placeholder="Your name" />
+              </div>
+
+              <div>
+                <label for="email">Business email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@business.com" />
+              </div>
+
+              <div class="rowFull">
+                <label for="businessType">What type of business are you running?</label>
+                <select id="businessType" name="business_type" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Local service business (e.g. cleaning, trades, home services)</option>
+                  <option>Professional services (consultant, coach, agency)</option>
+                  <option>Informational website / personal brand</option>
+                  <option>Ecommerce / online store</option>
+                </select>
+                <div class="hint" id="ecomHint" style="display:none;">
+                  Nimbus Sites does not currently support online stores or payment processing.
+                </div>
+              </div>
+
+              <div class="rowFull" id="ecomWarning" style="display:none;">
+                <div class="note warn">
+                  <strong>Heads up:</strong> Nimbus Sites does not build ecommerce/online store websites right now.
+                  If you need an online store, we can recommend alternatives — otherwise choose a service-based category to continue.
+                </div>
+              </div>
+
+              <div class="rowFull">
+                <label for="changeFreq">How often do you expect to request website changes?</label>
+                <select id="changeFreq" name="change_frequency" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Rarely (once or twice per year)</option>
+                  <option>Occasionally (a few times per year)</option>
+                  <option>Frequently (monthly or more)</option>
+                </select>
+                <div class="hint" id="freqHint" style="display:none;">
+                  Lifetime plans are typically not suitable for frequent ongoing changes.
+                </div>
+              </div>
+
+              <div class="rowFull">
+                <label>Which lifetime plan are you interested in?</label>
+                <select name="lifetime_plan_interest" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Starter — Lifetime</option>
+                  <option>Business — Lifetime</option>
+                  <option>Enterprise — Lifetime</option>
+                  <option>Not sure yet</option>
+                </select>
+                <div class="hint">
+                  This helps us review fit and recommend the right option. Selection is not a commitment.
+                </div>
+              </div>
+
+
+              <div class="rowFull">
+                <label>If lifetime isn't approved, which option would you prefer?</label>
+                <select name="fallback_plan" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Monthly hosting</option>
+                  <option>Annual hosting (2 months free)</option>
+                  <option>Not sure yet</option>
+                </select>
+                <div class="hint">This helps us recommend the best alternative if needed.</div>
+              </div>
+
+              <div class="rowFull">
+                <label for="callPref">Would you like to speak before deciding? (optional)</label>
+                <select id="callPref" name="call_preference">
+                  <option value="" selected>Choose one (optional)</option>
+                  <option>Yes — I'd like a short call before moving forward</option>
+                  <option>No — email is fine</option>
+                </select>
+
+                <div class="note" id="callNote" style="display:none; margin-top:10px;">
+                  Prefer to talk it through? If approved, you'll see an optional <strong>15-minute call</strong> booking link on the next page.
+                </div>
+              </div>
+
+              <div class="rowFull">
+                <div class="actions">
+                  <button class="btn primary" type="submit" id="submitBtn">Submit for review</button>
+                  <span class="small">We'll reply by email with next steps (approval + secure payment link, or best alternative).</span>
+                </div>
+              </div>
+
+              <div class="rowFull">
+                <p class="small" style="margin:10px 0 0;">
+                  By submitting, you agree to our
+                  <a href="/terms.html">Terms</a> and
+                  <a href="/privacy.html">Privacy Policy</a>.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">
+    <div class="container-wide">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>© <span data-year></span> Nimbus Sites. All rights reserved.</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="/legal/privacy-policy.html">Privacy</a>
+          <a href="/legal/terms-of-service.html">Terms</a>
+          <a href="/legal/cancellation-refund-policy.html">Cancellation</a>
+          <a href="/legal/fair-use-policy.html">Fair Use</a>
+        </div>
+      </div>
+      <div style="margin-top:10px">Questions? Email us at <a href="mailto:support@nimbussites.com">support@nimbussites.com</a> or <a href="/contact.html">Contact us</a> — no sales calls required.</div>
+    </div>
+  </div>
+
+  <script src="/assets/main.js"></script>
+  <script src="/assets/nav.js"></script>
+  <script>
+    // Light fade-in on scroll (subtle motion)
+    const fades = document.querySelectorAll('.fade');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    fades.forEach(el => io.observe(el));
+
+    // Helper: set hidden tracking fields from URL params
+    const params = new URLSearchParams(window.location.search);
+    const trackKeys = ["utm_source","utm_medium","utm_campaign","utm_content","variant","landing_page"];
+    trackKeys.forEach(k => {
+      const el = document.getElementById(k);
+      if (el) el.value = params.get(k) || "";
+    });
+
+    // Filtering logic
+    const businessType = document.getElementById('businessType');
+    const changeFreq = document.getElementById('changeFreq');
+    const callPref = document.getElementById('callPref');
+
+    const ecomHint = document.getElementById('ecomHint');
+    const ecomWarning = document.getElementById('ecomWarning');
+    const freqHint = document.getElementById('freqHint');
+    const callNote = document.getElementById('callNote');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function updateEcomState() {
+      const isEcom = businessType.value === "Ecommerce / online store";
+      ecomHint.style.display = isEcom ? "block" : "none";
+      ecomWarning.style.display = isEcom ? "block" : "none";
+      // Keep submission allowed (you may prefer to block; toggle below if desired)
+      // submitBtn.disabled = isEcom;
+      // submitBtn.textContent = isEcom ? "Ecommerce not supported" : "Submit for review";
+    }
+
+    function updateFreqState() {
+      const frequent = changeFreq.value === "Frequently (monthly or more)";
+      freqHint.style.display = frequent ? "block" : "none";
+    }
+
+    function updateCallState() {
+      const wantsCall = callPref.value === "Yes — I'd like a short call before moving forward";
+      callNote.style.display = wantsCall ? "block" : "none";
+    }
+
+    businessType.addEventListener('change', updateEcomState);
+    changeFreq.addEventListener('change', updateFreqState);
+    callPref.addEventListener('change', updateCallState);
+
+    // Init
+    updateEcomState();
+    updateFreqState();
+    updateCallState();
+  </script>
+
+  <!-- If your site has a global JS file (hamburger menu, etc.), include it like your other pages -->
+  <!-- <script src="/assets/js/main.js"></script> -->
+</body>
+</html>

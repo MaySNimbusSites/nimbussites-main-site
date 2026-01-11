@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Nimbus Sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Core Nimbus Sites styles -->
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <!-- Contact-specific styles -->
+  <link rel="stylesheet" href="/assets/contact.css" />
+  <link rel="stylesheet" href="/assets/header.css"/>
+  <link rel="stylesheet" href="/assets/header.css"/>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Nimbus Sites home">
+      <img src="/assets/images/logo.png" alt="Nimbus Sites logo">
+      <!-- <span class="logo-dot" aria-hidden="true"></span> -->
+      <span><span style="color: black;">Nimbus</span> Sites</span>
+    </a>
+
+    <nav id="nav">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/contact.html" class="active">Contact</a>
+      <a href="https://tally.so/r/2EakoA" class="btn-primary">Get Your Free Site</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger">☰</button>
+  </div>
+</header>
+
+  <!-- Main -->
+  <main class="ns-container ns-contact">
+    <h1>Contact Nimbus Sites</h1>
+    <p class="ns-lead">
+      Have a question before getting started? Send us a message and we'll reply by email.
+    </p>
+
+    <!-- Netlify Form -->
+    <form
+      name="contact"
+      method="POST"
+      action="/contact-success.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      class="ns-contact-form"
+    >
+
+      <!-- Required hidden fields -->
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
+
+      <div class="ns-field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+
+      <div class="ns-field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="ns-field">
+        <label for="website_type">What type of website do you need?</label>
+        <select id="website_type" name="website_type" required>
+          <option value="">Select one</option>
+          <option value="service">Service-based business</option>
+          <option value="professional">Professional / consultant</option>
+          <option value="informational">Informational website</option>
+          <option value="ecommerce">Ecommerce / online store</option>
+        </select>
+      </div>
+
+      <div class="ns-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="primary-btn">
+        Send Message
+      </button>
+
+      <p class="ns-form-note">
+        Nimbus Sites is designed for non-ecommerce websites only.
+      </p>
+    </form>
+
+    <div class="ns-contact-alt">
+      <p>
+        Ready to move forward?
+        <a href="https://tally.so/r/2EakoA">Start onboarding →</a>
+      </p>
+    </div>
+  </main>
+
+<div class="footer">
+  <div class="container-wide">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+      <div>© <span data-year></span> Nimbus Sites. All rights reserved.</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="/legal/privacy-policy.html">Privacy</a>
+        <a href="/legal/terms-of-service.html">Terms</a>
+        <a href="/legal/cancellation-refund-policy.html">Cancellation</a>
+        <a href="/legal/fair-use-policy.html">Fair Use</a>
+      </div>
+    </div>
+    <div style="margin-top:10px">Questions? Email us at <a href="mailto:support@nimbussites.com">support@nimbussites.com</a> or <a href="/contact.html">Contact us</a> — no sales calls required.</div>
+  </div>
+</div>
+
+  <script src="/assets/contact.js"></script>
+  <script src="/assets/nav.js"></script>
+</body>
+</html>

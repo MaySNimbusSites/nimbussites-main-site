@@ -1,0 +1,60 @@
+.ns-about section {
+  margin: 64px 0;
+}
+
+.ns-about h1,
+.ns-about h2 {
+  margin-bottom: 16px;
+}
+
+.ns-list {
+  padding-left: 20px;
+}
+
+.ns-list li {
+  margin-bottom: 8px;
+}
+
+blockquote {
+  border-left: 4px solid #2563eb;
+  padding-left: 16px;
+  margin: 24px 0;
+  color: #374151;
+}
+
+blockquote span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.about-hero-text {
+  max-width: 640px;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-hero-image {
+    order: -1; /* image above text on mobile */
+  }
+}

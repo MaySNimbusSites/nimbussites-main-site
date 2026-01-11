@@ -1,0 +1,199 @@
+
+:root{
+  --maxw: 1120px;
+  --midnight:#0B1F3B;
+  --electric:#2563EB;
+  --cloud:#F9FAFB;
+  --slate:#64748B;
+  --success:#16A34A;
+  --amber:#F59E0B;
+  --border:#E5E7EB;
+  --shadow: 0 10px 30px rgba(11,31,59,.08);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--midnight);
+  background:linear-gradient(180deg, var(--cloud) 0%, #ffffff 60%);
+  line-height:1.6;
+}
+
+a{color:var(--electric); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 60px;
+}
+
+.topbar{
+  position:sticky; top:0;
+  background:rgba(249,250,251,.85);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--border);
+  z-index:10;
+}
+
+.topbar-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+a.brand:hover{
+  text-decoration:none;
+}
+
+.logo-dot{
+  width:12px;height:12px;border-radius:50%;
+  background: var(--electric);
+  box-shadow: 0 0 0 5px rgba(37,99,235,.12);
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(37,99,235,.10);
+  color: var(--midnight);
+  border: 1px solid rgba(37,99,235,.20);
+  font-size: 12px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 18px;
+  margin-top: 18px;
+}
+
+h1{
+  font-size: clamp(22px, 3vw, 34px);
+  line-height:1.2;
+  margin: 10px 0 8px;
+}
+h2{
+  font-size: clamp(18px, 2.2vw, 22px);
+  margin: 22px 0 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+h3{
+  font-size: 16px;
+  margin: 16px 0 6px;
+  color: var(--midnight);
+}
+p,li{color:var(--midnight)}
+.small{color:var(--slate); font-size: 13px}
+
+.toc{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:8px;
+  padding: 0;
+  margin: 12px 0 0;
+  list-style:none;
+}
+.toc a{
+  display:block;
+  padding: 10px 12px;
+  border:1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+.toc a:hover{
+  border-color: rgba(37,99,235,.35);
+  box-shadow: 0 6px 18px rgba(37,99,235,.10);
+}
+
+.callout{
+  border-left: 4px solid var(--amber);
+  background: rgba(245,158,11,.10);
+  padding: 12px 12px;
+  border-radius: 14px;
+  margin: 14px 0;
+}
+
+.callout.success{
+  border-left-color: var(--success);
+  background: rgba(22,163,74,.10);
+}
+
+.container-wide{ max-width: var(--maxw); margin: 0 auto; padding: 0 18px; }
+
+.footer{
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--slate);
+  font-size: 13px;
+}
+
+.footer{
+  margin-top: 26px;
+  padding: 20px 0 26px;
+  border-top: 1px solid rgba(229,231,235,.8);
+  color: var(--slate);
+  font-size: 13px;
+}
+.footer a{ color: var(--midnight); font-weight: 900; text-decoration:none; }
+.footer a:hover{ text-decoration: underline; }
+
+.kv{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 12px;
+  margin-top: 10px;
+}
+.kv .pill{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  color: var(--midnight);
+}
+
+@media (min-width: 860px){
+  .toc{grid-template-columns: 1fr 1fr;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto}
+}
+
+/* Checkout consent snippet */
+.consent{
+  margin-top:14px;
+  padding:12px 12px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+}
+.consent label{display:flex; gap:10px; align-items:flex-start; font-size:14px;}
+.consent input{margin-top:3px; width:18px; height:18px; accent-color: var(--electric);}
+.note{
+  border-left:4px solid var(--electric);
+  background: rgba(37,99,235,.08);
+  padding: 12px 12px;
+  border-radius: 14px;
+  margin: 14px 0;
+}
