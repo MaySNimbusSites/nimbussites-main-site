@@ -62,3 +62,4 @@
   from = "/stripe-start"
   to = "/stripe-start.html"
   status = 200
+  force = true
