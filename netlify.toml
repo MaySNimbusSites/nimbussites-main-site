@@ -2,64 +2,142 @@
   from = "/pricing"
   to = "/pricing.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/pricing/"
+  to = "/pricing.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/variant-b"
   to = "/variant-b.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/variant-b/"
+  to = "/variant-b.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/qualify"
   to = "/qualify.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/qualify/"
+  to = "/qualify.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/legal/terms-of-service"
   to = "/legal/terms-of-service.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/legal/terms-of-service/"
+  to = "/legal/terms-of-service.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/legal/privacy-policy"
   to = "/legal/privacy-policy.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/legal/privacy-policy/"
+  to = "/legal/privacy-policy.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/legal/cancellation-refund-policy"
   to = "/legal/cancellation-refund-policy.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/legal/cancellation-refund-policy/"
+  to = "/legal/cancellation-refund-policy.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/legal/fair-use-policy"
   to = "/legal/fair-use-policy.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/legal/fair-use-policy/"
+  to = "/legal/fair-use-policy.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/contact"
   to = "/contact.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/contact-success"
   to = "/contact-success.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact-success/"
+  to = "/contact-success.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/about"
   to = "/about.html"
   status = 200
+  force = true
 
 [[redirects]]
-  from = "/about"
+  from = "/about/"
   to = "/about.html"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/cleaning"
   to = "/cleaning.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/cleaning/"
+  to = "/cleaning.html"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/stripe-start"
+  to = "/stripe-start.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/stripe-start/"
   to = "/stripe-start.html"
   status = 200
   force = true
