@@ -57,3 +57,8 @@
   from = "/cleaning"
   to = "/cleaning.html"
   status = 200
+
+[[redirects]]
+  from = "/stripe-start"
+  to = "/stripe-start.html"
+  status = 200

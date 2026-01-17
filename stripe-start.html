@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting to Secure Checkout | Nimbus Sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- NimbusSites Branding -->
+  <style>
+    :root {
+      --midnight-blue: #0B1F3B;
+      --electric-blue: #2563EB;
+      --cloud-white: #F9FAFB;
+      --muted: #6B7280;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cloud-white);
+      color: var(--midnight-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .plan {
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      background: var(--electric-blue);
+      color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .small {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .lock {
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="brand" href="/" aria-label="Nimbus Sites home">
+        <img style="height: 50px;" src="/assets/images/logo.png" alt="Nimbus Sites logo">
+    </div>
+
+    <h1>Almost there…</h1>
+
+    <p id="message">
+      You're being redirected to our secure checkout to complete your payment.
+    </p>
+
+    <div class="plan" id="planName"></div>
+
+    <a id="manualLink" class="btn" href="#">
+      <span class="lock">🔒</span> Continue to secure checkout
+    </a>
+
+    <div class="small" id="small">
+      If you are not redirected automatically, click the button above.
+    </div>
+  </div>
+
+  <script>
+    // Stripe link mapping
+    const STRIPE_LINKS = {
+      starter_monthly: "https://buy.stripe.com/14A8wH7pJchKcGhcpF3gk08",
+      starter_yearly: "https://buy.stripe.com/7sY6oz11lgy00Xz9dt3gk07",
+      starter_lifetime: "https://buy.stripe.com/fZu6oz9xR1D65dP4Xd3gk00",
+
+      business_monthly: "https://buy.stripe.com/fZu28j5hBepS0Xz75l3gk06",
+      business_yearly: "https://buy.stripe.com/28EcMX25p1D6dKldtJ3gk05",
+      business_lifetime: "https://buy.stripe.com/3cIcMXcK3bdGgWxfBR3gk02",
+
+      enterprise_monthly: "https://buy.stripe.com/3cI8wHbFZchKay9cpF3gk04",
+      enterprise_yearly: "https://buy.stripe.com/14AfZ9bFZa9C9u5dtJ3gk03",
+      enterprise_lifetime: "https://buy.stripe.com/00w5kv9xR3Le0Xz2P53gk01"
+    };
+
+    // Read URL param
+    const params = new URLSearchParams(window.location.search);
+    const plan = params.get("plan");
+
+    const stripeUrl = STRIPE_LINKS[plan];
+
+    const planNameMap = {
+      starter_monthly: "Starter Plan — Monthly",
+      starter_yearly: "Starter Plan — Annual",
+      starter_lifetime: "Starter Plan — Lifetime",
+
+      business_monthly: "Business Plan — Monthly",
+      business_yearly: "Business Plan — Annual",
+      business_lifetime: "Business Plan — Lifetime",
+
+      enterprise_monthly: "Enterprise Plan — Monthly",
+      enterprise_yearly: "Enterprise Plan — Annual",
+      enterprise_lifetime: "Enterprise Plan — Lifetime"
+    };
+
+    if (!stripeUrl) {
+      document.getElementById("message").innerText =
+        "We couldn't determine your selected plan. Please return to your previous page, or refresh and try again. Contact support@nimbussites.com if the issue continues.";
+      document.getElementById("manualLink").style.display = "none";
+      document.getElementById("small").style.display = "none";
+    } else {
+      document.getElementById("planName").innerText = planNameMap[plan] || "";
+      document.getElementById("manualLink").href = stripeUrl;
+      document.getElementById("small").style.display = "block";
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "begin_checkout",
+        plan: plan
+      });
+
+      // Auto redirect after short delay
+      setTimeout(() => {
+        window.location.href = stripeUrl;
+      }, 400);
+    }
+  </script>
+
+</body>
+</html>
